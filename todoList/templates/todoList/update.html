@@ -1,0 +1,6 @@
+<h1>Update Data</h1>
+<form action="updaterecord/{{mymember.id}}" method="POST">
+    {% csrf_token %}
+    <input type="text" placeholder="Add Item" class="input" name="input" value="{{mymember.item}}">
+    <button type="submit">Submit</button>
+</form>

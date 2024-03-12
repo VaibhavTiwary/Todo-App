@@ -1,0 +1,15 @@
+{% load static %}
+
+<h1>Add Your List here</h1>
+<form action="/" method="post">
+    {% csrf_token %}
+    <input type="text" placeholder="Add Item" class="input" name="input">
+    <button type="submit">Submit</button>
+</form>
+{% if all_list %}
+{% for item in all_list %}
+<p>{{item}}</p>
+<a href="delete/{{item.id}}">Delete</a>
+<a href="update/{{item.id}}">Update</a>
+{% endfor %}
+{% endif %}
